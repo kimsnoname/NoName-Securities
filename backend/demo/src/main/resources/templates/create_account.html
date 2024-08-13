@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create Account</title>
+</head>
+<body>
+    <h1>Create Account</h1>
+    <form th:action="@{/account/create}" method="post">
+        <input type="hidden" th:name="userId" th:value="${userId}" />
+        <div>
+            <label for="accountNum">Account Number:</label>
+            <input type="text" id="accountNum" name="accountNum" th:value="${userAccount.accountNum}" readonly />
+        </div>
+        <div>
+            <label for="accountPW">Account Password:</label>
+            <input type="password" id="accountPW" name="accountPW" th:value="${userAccount.accountPW}" maxlength="4" minlength="4" required />
+        </div>
+        <div>
+            <label for="balance">Initial Balance:</label>
+            <input type="number" id="balance" name="balance" th:value="${userAccount.balance}" readonly />
+        </div>
+        <div>
+            <button type="submit">Create</button>
+        </div>
+    </form>
+</body>
+</html>

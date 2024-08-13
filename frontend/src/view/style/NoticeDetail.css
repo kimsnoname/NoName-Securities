@@ -1,0 +1,80 @@
+/* NoticeDetail.css */
+
+.notice-detail {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.notice-title h1 {
+  color: #162B4B; /* 파란색 */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.notice-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  color: #181949; /* 어두운 텍스트 색상 */
+}
+
+.notice-content {
+  margin-bottom: 20px;
+}
+
+.notice-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.notice-actions button {
+  margin: 5px;
+}
+
+@media (max-width: 767px) {
+  .notice-detail {
+    padding: 10px;
+  }
+
+  .notice-title h1 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+
+  .notice-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 0.9em;
+  }
+
+  .notice-author,
+  .notice-date {
+    margin-bottom: 5px;
+  }
+
+  .notice-content {
+    margin-bottom: 15px;
+    font-size: 1em;
+  }
+
+  .notice-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .notice-actions button {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .notice-actions button:last-child {
+    margin-bottom: 0;
+  }
+}

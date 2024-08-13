@@ -1,0 +1,132 @@
+/* Noticelist.css */
+
+/* 기본 스타일 */
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: 'Arial', sans-serif;
+}
+
+.notice-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.notice-list h1 {
+  color: #162B4B; /* 파란색 */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.write-button {
+  display: block;
+  margin: 20px auto;
+  background-color: #162B4B; /* 파란색 */
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.write-button:hover {
+  background-color: #1A1A2E; /* 약간 어두운 파란색 */
+}
+
+.desktop-view table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.desktop-view th, .desktop-view td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.desktop-view th {
+  background-color: #ff007f; /* 포인트 분홍색 */
+  color: white;
+}
+
+.desktop-view td {
+  background-color: #ffffff;
+  color: #181949; /* 어두운 텍스트 색상 */
+}
+
+.write-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.write-button-container .button {
+  font-size: 14px;
+  padding: 4px 10px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .notice-list {
+    padding: 10px;
+  }
+
+  .desktop-view {
+    display: none;
+  }
+
+  .mobile-view {
+    display: block;
+  }
+
+  .mobile-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .mobile-list li {
+    background-color: #ffffff; /* 배경색을 흰색으로 설정 */
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    color: #181949; /* 어두운 텍스트 색상 */
+  }
+
+  .mobile-list h3 {
+    font-size: 18px; /* 제목 크기를 키웁니다. */
+    margin-bottom: 5px;
+    color: #162B4B; /* 파란색 */
+  }
+
+  .mobile-list p {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .mobile-list .mobile-date,
+  .mobile-list .mobile-views {
+    color: #c1c1c1; /* 텍스트 색상을 회색으로 설정 */
+    text-align: right; /* 우측 정렬 */
+  }
+
+  .write-button-container {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .write-button-container .button {
+    width: 100%;
+    text-align: center;
+    background-color: #162B4B; /* 새로운 파란색 */
+    color: #ffffff;
+  }
+
+  .write-button-container .button:hover {
+    background-color: #1A1A2E; /* 약간 어두운 파란색 */
+  }
+}

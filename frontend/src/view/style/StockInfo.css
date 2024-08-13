@@ -1,0 +1,27 @@
+.stock-info-container {
+  position: absolute;
+  right: 0;
+  width: 300px;
+  padding: 10px;
+  border-left: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.stock-info-container h3,
+.stock-info-container h4 {
+  margin: 10px 0;
+}
+
+.stock-info-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.stock-info-container ul li {
+  margin-bottom: 5px;
+}
+
+.stock-info-container a {
+  color: #0066cc;
+  text-decoration: none;
+}

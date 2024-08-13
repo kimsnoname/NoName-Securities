@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+@font-face {
+  font-family: 'Moebius_Bold_kor';
+  src: url(./Moebius_Bold_kor.ttf) format('truetype');
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+  margin-top: 45px; /* Move navbar down by 45px from the top */
+}
+
+.logo {
+  font-size: 32px;
+  font-family: 'Moebius_Bold_kor';
+  color: #ff007f;
+  font-weight: bold;
+  text-decoration: none; /* Remove underline from the link */
+  margin-left: 130px; /* Add 130px margin from the left */
+  
+}
+
+.logo span:nth-child(1){
+  color:#ff007f;
+}
+
+.logo span:nth-child(2){
+  color:#162B4B;
+}
+
+.nav-menu {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Center align menu items */
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+  margin-right: 130px; /* Add 130px margin from the right */
+}
+
+.welcome-message {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.nav-menu .ant-menu-item {
+  font-size: 16px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.nav-menu .ant-menu-item:hover, /*마우스 갖다 대면 주황으로 바낌*/
+.nav-menu .ant-menu-item-active {
+  color: #ff007f !important;
+}
+
+.nav-menu .ant-menu-item:hover::after, /*매뉴바 밑에 나오는 작은 밑줄*/
+.nav-menu .ant-menu-item-selected::after,
+.nav-menu .ant-menu-item-active::after {
+  border-bottom: 2px solid #ff007f !important;
+}
+
+/* Added this to ensure selected menu item text is #ff007f */
+.nav-menu .ant-menu-item-selected,
+.nav-menu .ant-menu-item-selected a {
+  color: #ff007f !important;
+}
+
+.signup-button {
+  background-color: #ffffff;
+  color: #ff007f;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.signup-button:hover {
+  background-color: #ffffff !important;
+  color: #ff007f !important;
+  border-color: #ff007f !important;
+}
+
+.login-button {
+  background-color: #162B4B;
+  color: #ff007f;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.login-button:hover {
+  color: #ff007f !important;
+  border-color: #ff007f !important;
+}
+
+.logout-button {
+  background-color: #162B4B;
+  color: #ff007f;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.logout-button:hover {
+  color: #ff007f !important;
+  border-color: #ff007f !important;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .auth-buttons {
+    display: flex; /* Display auth buttons on mobile */
+    gap: 10px;
+    margin-right: 20px; /* Adjust margin for mobile view */
+  }
+
+  .signup-button {
+    display: none; /* Hide signup button on mobile view */
+  }
+
+  .logo {
+    display: none; /* Hide logo on mobile view */
+  }
+
+  .menu-button {
+    margin-right: 20px; /* Adjust margin for mobile view */
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-button {
+    display: none; /* Hide menu button on desktop view */
+  }
+}

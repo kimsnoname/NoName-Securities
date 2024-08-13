@@ -1,0 +1,13 @@
+라이트(LTC) 채굴 셋팅 텍스트 * 작성자 : 어디서든 광부
+
+1. PhoenixMiner
+ 가. 그래픽 카드 메모리 6GB 이상
+﻿ PhoenixMiner.exe -pool ethash.unmineable.com:3333 -wal ﻿ LTC:LXG8SpthjQX9KMJBZcf2dbYB2aoaYenXR5.myHome#cpgu-t9qu﻿﻿ -pass x﻿
+ 나. 그래픽 카드 메모리 3GB 이상
+ PhoenixMiner.exe -pool etchash.unmineable.com:3333 -wal ﻿ LTC:LXG8SpthjQX9KMJBZcf2dbYB2aoaYenXR5.myHome#cpgu-t9qu﻿ -pass x -coin etc﻿
+
+​2. lolMiner
+ 가. 그래픽 카드 메모리 6GB 이상
+ lolMiner.exe --algo ETHASH --pool ethash.unmineable.com:3333 --user ﻿ LTC:LXG8SpthjQX9KMJBZcf2dbYB2aoaYenXR5.myHome#cpgu-t9qu﻿ --ethstratum ETHPROXY 
+ 나. 그래픽 카드 메모리 3GB 이상
+ lolMiner.exe --algo ETCHASH --pool etchash.unmineable.com:3333 --user ﻿ LTC:LXG8SpthjQX9KMJBZcf2dbYB2aoaYenXR5.myHome#cpgu-t9qu﻿ --ethstratum ETHPROXY

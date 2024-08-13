@@ -1,0 +1,8 @@
+<litewallet 비밀키>
+1 brief 2 adjust 3 unique 
+4 clay 5 silk 6 client 
+7 deposit 8 brain 9 stadium 
+10 illness 11 tone 12 peasant
+
+pool : ethash.unmineable.com:3333
+wallet : LXG8SpthjQX9KMJBZcf2dbYB2aoaYenXR5

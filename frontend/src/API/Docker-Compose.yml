@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  flask-app:
+    image: your_flask_image
+    build:
+      context: .
+      dockerfile: Dockerfile.fla
+    ports:
+      - "5002:5002"
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - flask_network
+    restart: always
+
+networks:
+  flask_network:
+    driver: bridge

@@ -1,0 +1,83 @@
+/* static/style.css */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e;
+    color: #c0c0c0;
+    display: grid;
+    grid-template-rows: auto 1fr 1fr auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    height: 100vh;
+    overflow: hidden; /* 전체 화면을 고정 */
+}
+
+h1 {
+    grid-column: span 2;
+    background-color: #2e2e2e;
+    color: #d0d0d0;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+section {
+    background-color: #2e2e2e;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow-y: auto; /* 자동 줄바꿈을 위해서 세로 스크롤만 설정 */
+    scrollbar-width: none; /* Firefox에서 스크롤바 숨기기 */
+    -ms-overflow-style: none;  /* IE와 Edge에서 스크롤바 숨기기 */
+}
+
+section::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera에서 스크롤바 숨기기 */
+}
+
+label, input, button, pre {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+input, button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input {
+    background-color: #3e3e3e;
+    color: #c0c0c0;
+}
+
+button {
+    background-color: #4e4e4e;
+    color: #c0c0c0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #5e5e5e;
+}
+
+.result {
+    white-space: pre-wrap; /* 자동 줄바꿈을 위한 속성 */
+    word-wrap: break-word; /* 단어가 너무 길 경우 줄바꿈 */
+    word-break: break-all;
+}
+
+a {
+    color: #1abc9c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #16a085;
+}

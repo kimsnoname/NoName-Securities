@@ -1,0 +1,6 @@
+flask
+pykrx
+flask_cors
+pandas
+urllib3
+python-kis

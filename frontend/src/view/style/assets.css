@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.assets_parent-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+.assets_wrapper_1 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  font-size: 18px;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.assets_wrapper_1 div {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.assets_wrapper_1 .right-align {
+  text-align: right;
+}
+
+.assets_positive {
+  color: red;
+}
+
+.assets_negative {
+  color: blue;
+}
+
+.assets_neutral {
+  color: black;
+}
+
+.assets_wrapper_2 {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.assets_wrapper_2-left,
+.assets_wrapper_2-right {
+  width: 48%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.assets_wrapper_2-left {
+  height: 400px;
+}
+
+.assets_wrapper_2-right table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.assets_wrapper_2-right th,
+.assets_wrapper_2-right td {
+  padding: 10px;
+  text-align: right;
+  border-bottom: 1px solid #ddd;
+}
+
+.assets_wrapper_2-right th {
+  text-align: left;
+}
+
+.assets_wrapper_2-right td:first-child,
+.assets_wrapper_2-right th:first-child {
+  text-align: left;
+}
+
+/* 종목별 현황 스타일 */
+.stocks-section {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.stocks-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.stock-item {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  text-align: left;
+}
+
+.stock-item div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stock-item div span {
+  display: inline-block;
+  width: 50%;
+}
+
+/* 모바일 전용 스타일 */
+@media (max-width: 767px) {
+  .assets_parent-wrapper {
+    padding: 10px;
+  }
+
+  .assets_wrapper_1 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .assets_wrapper_1 div {
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 14px;
+  }
+
+  .assets_wrapper_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .assets_wrapper_2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .assets_wrapper_2-left {
+    width: 100%;
+    height: 400px; /* Increase the height for the graph */
+    margin-bottom: 20px;
+  }
+
+  .assets_wrapper_2-right {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .assets_wrapper_2-right div {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+
+  .stocks-section h2 {
+    font-size: 20px;
+  }
+
+  .stock-header,
+  .stock-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .stock-item span:nth-child(4),
+  .stock-item span:nth-child(5) {
+    text-align: right;
+  }
+
+  .stock-item span:nth-child(2),
+  .stock-item span:nth-child(3) {
+    display: inline-block;
+    width: 45%;
+  }
+}

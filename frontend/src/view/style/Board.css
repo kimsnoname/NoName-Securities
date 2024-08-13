@@ -1,0 +1,154 @@
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: 'Arial', sans-serif;
+}
+
+.board-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.pagination {
+  text-align: center; /* 페이지 버튼을 가운데 정렬 */
+  margin-top: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #162B4B; /* 파란색 */
+}
+
+.navigate-board {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.navigate-board .ant-input {
+  max-width: 300px;
+  margin-right: 10px;
+  border: 1px solid #ff007f; /* 분홍색 */
+}
+
+.navigate-button {
+  background-color: #162B4B; /* 파란색 */
+  color: white;
+  border: none;
+}
+
+.navigate-button:hover {
+  background-color: #FF3482; /* 밝은 분홍색 */
+  color: white;
+}
+
+.desktop-view {
+  display: none;
+}
+
+.mobile-view {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktop-view {
+    display: block;
+  }
+
+  .desktop-view table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .desktop-view th, .desktop-view td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+
+  .desktop-view th {
+    background-color: #ff007f; /* 포인트 분홍색 */
+    color: white;
+  }
+
+  .desktop-view td {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  .write-button {
+    background-color: #162B4B; /* 새로운 파란색 */
+    color: #ffffff;
+    border: none;
+    margin-top: 10px;
+    padding: 10px 20px; /* 좌우 크기를 20px로 설정 */
+  }
+
+  .write-button:hover {
+    background-color: #1A1A2E; /* 약간 어두운 파란색 */
+  }
+}
+
+@media (max-width: 767px) {
+  .mobile-view {
+    display: block;
+  }
+
+  .mobile-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .mobile-list li {
+    background-color: #ffffff; /* 배경색을 흰색으로 설정 */
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    color: #181949; /* Dark text color */
+  }
+
+  .mobile-list h3 {
+    font-size: 23px; /* 제목 크기를 키웁니다. */
+    margin-bottom: 5px;
+    color: #162B4B; /* 파란색 */
+  }
+
+  .mobile-list p {
+    margin: 0;
+    font-size: 14px;
+    color: #000000; /* 텍스트 색상을 검정색으로 설정 */
+  }
+
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+  }
+
+  .info-item {
+    flex: 1;
+    text-align: right;
+  }
+
+  .info-item:first-child {
+    text-align: left;
+  }
+
+  .write-button {
+    width: calc(100% - 40px); /* 좌우 크기를 줄입니다 */
+    text-align: center;
+    margin: 20px auto; /* 가운데 정렬을 위해 margin을 조정합니다 */
+    background-color: #162B4B; /* 새로운 파란색 */
+    color: #ffffff;
+    padding: 15px 20px;
+  }
+
+  .write-button:hover {
+    background-color: #1A1A2E; /* 약간 어두운 파란색 */
+  }
+}

@@ -1,0 +1,121 @@
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: 'Arial', sans-serif;
+}
+
+.community-detail {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.community-detail h1 {
+  color: #4890fb; /* 파란색 */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.community-detail p {
+  color: #181949; /* 어두운 텍스트 색상 */
+  margin-bottom: 10px;
+}
+
+.community-detail .post-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.community-detail .post-content {
+  margin-bottom: 20px;
+}
+
+.community-detail .comments-section {
+  margin-top: 40px;
+}
+
+.comments-section h2 {
+  color: #C94077; /* 포인트 분홍색 */
+  margin-bottom: 20px;
+}
+
+.comments-section .comments-list {
+  margin-top: 20px;
+}
+
+.comment {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.comment p {
+  margin: 5px 0;
+}
+
+.comment button {
+  color: #ff007f; /* 링크 버튼 색상 */
+}
+
+.comment button:hover {
+  color: #C94077; /* 밝은 분홍색 */
+}
+
+.comment .ant-btn-link {
+  padding: 0;
+  height: auto;
+}
+
+.community-detail button {
+  margin-right: 10px;
+}
+
+.community-detail button:last-child {
+  margin-right: 0;
+}
+
+.ant-input,
+.ant-btn {
+  border-radius: 5px;
+}
+
+.ant-input-textarea {
+  resize: none;
+}
+
+.ant-btn-primary {
+  background-color: #162B4B; /* 파란색 */
+  border: none;
+}
+
+.ant-btn-primary:hover {
+  background-color: #1A1A2E; /* 약간 어두운 파란색 */
+}
+
+.ant-btn-default {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+}
+
+.ant-btn-default:hover {
+  background-color: #f0f0f0;
+}
+
+.ant-btn-link {
+  color: #ff007f; /* 링크 버튼 색상 */
+}
+
+.ant-btn-link:hover {
+  color: #C94077; /* 밝은 분홍색 */
+}
+
+.comments-list .comment-meta {
+  display: flex;
+  justify-content: space-between;
+}

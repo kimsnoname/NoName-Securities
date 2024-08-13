@@ -1,0 +1,97 @@
+.container {
+    width: 1400px;
+    height: auto; /* Adjusted for dynamic content */
+    margin: 0 auto; /* Center align horizontally */
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-container-1 {
+    width: 990px;
+    height: 44px;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center; /* Vertically center align */
+}
+
+.sub-container-2 {
+    width: 990px;
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Vertically center align */
+    /* background-color: chocolate; */
+}
+
+.sub-container-2 .price-info {
+    flex: 1; /* Expands Current Price to the left */
+    font-size: 32px;
+}
+
+.sub-container-2 .other-info {
+    text-align: left;
+    font-size: 14px;
+}
+
+.other-info span {
+    margin-left: 50px;
+}
+
+.sub-container-3 {
+    display: flex;
+    justify-content: space-between; /* Horizontally align Sell Orders and Buy Orders */
+    width: 990px;
+    margin-top: 20px; /* Adjust margin for spacing */
+}
+
+.sell-order,
+.buy-order {
+    width: 50%;
+    max-width: 400px; /* Adjust as needed */
+    min-height: 100px;
+    padding: 10px;
+    list-style-type: none;
+}
+
+.sell-order {
+    background-color: #D3EAFF;
+    border-radius: 5px;
+}
+
+.buy-order {
+    background-color: #FFD3D3;
+    border-radius: 5px;
+}
+
+.sell-order li,
+.buy-order li {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between; /* Horizontally align price and quantity */
+}
+
+.sell-order .price{
+    color: red; /* Sell and Buy price text color */
+}
+.buy-order .price {
+   color : blue;
+}
+
+.sell-order .quantity,
+.buy-order .quantity {
+    color: black; /* Sell and Buy quantity text color */
+}
+
+.input-row {
+    margin-top: 20px;
+}
+
+.button-row {
+    margin-top: 20px;
+}
+
+.sub-container-4 {
+    display: flex;
+    justify-content: space-between; /* Horizontally align Sell Orders and Buy Orders */
+    width: 990px;
+    margin-top: 20px; /* Adjust margin for spacing */
+}

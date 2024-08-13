@@ -1,0 +1,15 @@
+.mobile-footer-menu {
+  display: none; /* 기본적으로 숨김 */
+}
+
+@media (max-width: 768px) {
+  .mobile-footer-menu {
+    display: block; /* 모바일에서만 보이도록 설정 */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 1px solid #e8e8e8;
+    z-index: 1000;
+  }
+}

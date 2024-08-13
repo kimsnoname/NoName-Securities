@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Account List</title>
+</head>
+<body>
+    <h1>Account List</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>User ID</th>
+            <th>Account Name</th>
+        </tr>
+        <tr th:each="account : ${accountList}">
+            <td th:text="${account.id}"></td>
+            <td th:text="${account.userId}"></td>
+            <td th:text="${account.accountName}"></td>
+        </tr>
+    </table>
+    <a href="/account/create?userId=1">Create New Account</a>
+</body>
+</html>

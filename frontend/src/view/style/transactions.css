@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+@font-face {
+  font-family: 'Moebius_Bold_kor';
+  src: url(./Moebius_Bold_kor.ttf) format('truetype');
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.site-layout-background {
+  background: white;
+}
+
+.header {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+
+.wrapper-transfer {
+  width: 80%;
+  background: white !important;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-left: 10%;
+  position: relative;
+  opacity: 0; /* Initially set to 0 for the fade-in effect */
+  animation: fadeInUp 1s ease-out forwards; /* Apply the fade-in-up animation */
+}
+
+.layout-content {
+  padding: 24px;
+  margin: 0;
+  min-height: 280px;
+}
+
+.card {
+  margin-bottom: 24px;
+}
+
+.divider {
+  margin: 24px 0;
+}
+
+.profit-positive {
+  color: red;
+}
+
+.profit-negative {
+  color: blue;
+}
+
+/* 모바일 전용 스타일 */
+@media (max-width: 767px) {
+  .wrapper-transfer {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 0;
+  }
+
+  .layout-content {
+    padding: 12px;
+  }
+
+  .card {
+    margin-bottom: 16px;
+  }
+
+  .divider {
+    margin: 16px 0;
+  }
+
+  .ant-table-wrapper {
+    display: none; /* Hide the table on mobile */
+  }
+
+  .mobile-transaction-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+
+  .mobile-transaction-card .card-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .mobile-transaction-card .card-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .mobile-transaction-card .label {
+    font-weight: bold;
+    color: #333;
+  }
+
+  .mobile-transaction-card .value {
+    color: #666;
+  }
+
+  .ant-card-head-title {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 769px){
+  .mobile-transaction-card{
+    display: none;
+  }
+}
+
+.buy-row {
+  background-color: #ffcccc; /* 빨간색 배경 */
+}
+
+.sell-row {
+  background-color: #cce5ff; /* 파란색 배경 */
+}

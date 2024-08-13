@@ -1,0 +1,166 @@
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.site-layout-background {
+    background: #fff;
+  }
+  
+  .header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+  }
+  
+  .logo {
+    width: 120px;
+    height: 31px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px 24px 16px 0;
+    float: left;
+  }
+  
+  .layout-content {
+    padding: 24px;
+    margin: 0;
+    min-height: 280px;
+  }
+  
+  .card {
+    margin-bottom: 24px;
+  }
+  
+  .divider {
+    margin: 24px 0;
+  }
+  
+  .transfer-button, .transfer-next-button {
+    width: 100%;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #ff007f !important;
+    color: white !important;
+    margin-top: 30px;
+    font-size: 11pt;
+  }
+
+  .transfer-button:hover, .transfer-next-button:hover {
+    background-color: white !important;
+    color: #ff007f !important;
+    border-color: #ff007f !important;
+  }
+
+  .parent-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .wrapper-transfer {
+    width: 70%;
+    height: 250px; /* Increase height */
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 0px;
+    margin-left: 10%;
+    position: relative;
+    opacity: 0; /* Initially set to 0 for the fade-in effect */
+    animation: fadeInUp 1s ease-out forwards; /* Apply the fade-in-up animation */
+  }
+
+  .select-transfer {
+    opacity: 0; /* Initially set to 0 for the fade-in effect */
+    animation: fadeInUp 1s ease-out forwards; /* Apply the fade-in-up animation */
+  }
+
+  .bankmenu-button {
+    border-color: white;
+  }
+
+  .bankmenu-button:hover {
+    background-color: #ff007f !important;
+    color: white !important;
+    border-color: white !important;
+  }
+
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.password-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* 위아래 마진 */
+    margin-bottom: 50px;
+}
+
+.password-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: lightgrey;
+    margin: 0 5px;
+}
+
+.password-dot.filled {
+    background-color: black;
+}
+
+.button-grid {
+    width: 100%; /* 모달의 전체 너비 */
+}
+
+.button-grid .ant-col {
+    padding: 0px; /* 버튼 사이의 간격 */
+    margin: 0px;
+}
+
+.button-grid .ant-btn {
+
+    background-color: #fff !important;
+    color: black;
+}
+
+.button-grid .ant-btn:hover {
+  
+  background-color: #ff007f !important;
+  color: black;
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+  .wrapper {
+    width: 100%; /* Adjust width for mobile */
+    height: auto; /* Adjust height for mobile */
+  }
+
+  .ant-form-item {
+    width: 100% !important; /* Make form items full width */
+    display: block !important; /* Make form items block to stack them vertically */
+    margin-bottom: 16px; /* Add some space between form items */
+  }
+
+  .ant-form-item label {
+    font-size: 16px; /* Adjust label font size for mobile */
+  }
+
+  .ant-input {
+    font-size: 16px; /* Adjust input font size for mobile */
+  }
+
+
+  .mobile-container {
+    padding: 10px; /* Add some padding for the mobile container */
+    opacity: 0; /* Initially set to 0 for the fade-in effect */
+    animation: fadeInUp 1s ease-out forwards; /* Apply the fade-in-up animation */
+  }
+}

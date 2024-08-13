@@ -1,0 +1,63 @@
+/* WelcomePage.css */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+@font-face {
+    font-family: 'Moebius_Bold_kor';
+    src: url(./Moebius_Bold_kor.ttf) format('truetype');
+  }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  
+
+
+.transfer-success-container {
+    position: relative;
+    top: 100px;
+    max-width: 400px;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0 auto;
+    padding: 3rem;
+    background-color: #f7f7f7;
+    border-color: #ff007f;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex; /* 플렉스 컨테이너로 설정 */
+    flex-direction: column; /* 자식 요소들을 세로로 정렬 */
+    justify-content: center; /* 수직 방향 가운데 정렬 */
+    align-items: center;
+    opacity: 0; /* Initially set to 0 for the fade-in effect */
+    animation: fadeInUp 1s ease-out forwards; /* Apply the fade-in-up animation */
+  }
+  
+  .transfer-success-container h1 {
+    color: #ff007f;
+    margin-bottom: 3rem;
+    font-family: 'Moebius_Bold_kor', sans-serif;
+  }
+
+  .transfer-success-container h2 {
+    color: black;
+    margin-top: 0.3rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+  
+  .back-to-transfer-button {
+    margin-top: 2rem;
+    background-color: #ff007f;
+    color: white;
+  }
+
+  .back-to-transfer-button:hover {
+    background-color: white !important;
+    color: #ff007f !important;
+    border-color: #ff007f !important;
+  }

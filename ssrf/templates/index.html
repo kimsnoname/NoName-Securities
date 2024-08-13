@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metadata Explorer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* 기존 CSS 스타일 */
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e;
+            color: #ffffff; /* 글자색을 하얀색으로 변경 */
+            display: grid;
+            grid-template-rows: auto 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 15px;
+            min-height: 100vh; /* 최소 높이를 100vh로 설정 */
+            overflow: auto; /* 스크롤 가능하도록 설정 */
+        }
+
+        h1 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(46, 46, 46, 0.6); /* 투명도 60% */
+            color: #ffffff; /* 글자색을 하얀색으로 변경 */
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            z-index: 10; /* 다른 요소들보다 위에 오도록 설정 */
+            margin: 0;
+        }
+
+        section {
+            background-color: rgba(46, 46, 46, 0.6); /* 투명도 60% */
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            margin-top: 80px; /* h1의 높이만큼 margin-top 추가 */
+            margin-bottom: -60px;
+        }
+
+        section h2 {
+            margin-top: 0;
+        }
+
+        section::-webkit-scrollbar {
+            display: none;
+        }
+
+        label, input, button, pre {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            color: #ffffff; /* 글자색을 하얀색으로 변경 */
+        }
+
+        input, button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input {
+            background-color: #3e3e3e;
+            color: #ffffff; /* 글자색을 하얀색으로 변경 */
+        }
+
+        button {
+            background-color: #4e4e4e;
+            color: #ffffff; /* 글자색을 하얀색으로 변경 */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #5e5e5e;
+        }
+
+        .result {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+
+        a {
+            color: #1abc9c;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #16a085;
+        }
+
+        /* 매트릭스 코드 CSS 스타일 */
+        @font-face {
+            font-family: 'Matrix Code NFI';
+            font-style: normal;
+            font-weight: normal;
+            src: local('Matrix Code NFI'), url('font/matrix_code_nfi.woff') format('woff');
+        }
+
+        #matrix {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            z-index: -1; /* Canvas를 배경으로 하기 위해 z-index를 설정합니다 */
+        }
+
+        /* 매트릭스 효과를 위한 기본 스타일 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        body {
+            background: #000;
+            color: #4dff4d;
+            font-family: "Lucida Console", Monaco, monospace, "Courier New", Courier;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrix"></canvas>
+    <h1>Metadata Explorer</h1>
+
+    <section style="grid-area: 2 / 1 / 3 / 2;">
+        <h2>Metadata Explorer</h2>
+        <form action="/explore" method="get">
+            <label for="path">Current Path: {{ current_path }}</label>
+            <label for="path">Enter Metadata Path:</label>
+            <input type="text" id="path" name="path" placeholder="security-credentials/">
+            <input type="hidden" name="current_path" value="{{ current_path }}">
+            <button type="submit">Explore</button>
+        </form>
+        <a href="{{ url_for('explore', path=parent_path) }}">Go to Parent Directory</a>
+    </section>
+
+    <section style="grid-area: 2 / 2 / 3 / 3; text-align: left;">
+        <h2>Result</h2>
+        <div class="result">
+            {{ result | safe }}
+        </div>
+    </section>
+
+    <section style="grid-area: 3 / 1 / 4 / 2;">
+        <h2>Create IAM User</h2>
+        <form action="/create_user" method="post">
+            <label for="username">IAM Username:</label>
+            <input type="text" id="username" name="username" required>
+            <button type="submit">Create User</button>
+            <label for="access_key">Access Key:</label>
+            <input type="text" id="access_key" name="access_key" value="{{ access_key }}" required>
+            <label for="secret_key">Secret Key:</label>
+            <input type="text" id="secret_key" name="secret_key" value="{{ secret_key }}" required>
+            <label for="session_token">Session Token:</label>
+            <input type="text" id="session_token" name="session_token" value="{{ session_token }}" required>
+        </form>
+    </section>
+
+    <section style="grid-area: 3 / 2 / 4 / 3;">
+        <h2>IAM Result</h2>
+        <div class="result">
+            {{ iam_result | safe }}
+        </div>
+        {% if login_url %}
+        <div>
+            <a href="{{ login_url }}" target="_blank">Login URL</a>
+        </div>
+        {% endif %}
+    </section>
+
+    <script>
+        function Matrix() {
+            const canvas = document.getElementById('matrix');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const katakana = 'アカサタナハマヤラワガザダバパイキシチニヒミイリヰグズヅブプウクスツヌフムユルンヱゲゼデベペエケセテネヘメレヲゴゾドボポオコソトノホモヨロ';
+            const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const nums = '0123456789';
+            const alphabet = katakana + latin + nums;
+
+            const fontSize = 16;
+            const columns = canvas.width / fontSize;
+
+            const rainDrops = Array(Math.floor(columns)).fill(1);
+
+            const draw = () => {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.fillStyle = '#0F0';
+                ctx.font = `${fontSize}px Matrix Code NFI`;
+
+                rainDrops.forEach((y, index) => {
+                    const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+                    const x = index * fontSize;
+                    ctx.fillText(text, x, y * fontSize);
+
+                    if (y * fontSize > canvas.height && Math.random() > 0.975) {
+                        rainDrops[index] = 0;
+                    }
+                    rainDrops[index]++;
+                });
+            };
+
+            setInterval(draw, 33);
+        }
+
+        Matrix();
+    </script>
+</body>
+</html>

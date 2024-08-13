@@ -1,0 +1,24 @@
+.community-form {
+  padding: 20px;
+  background-color: #fff; /* White background */
+  border-radius: 5px; /* Rounded corners */
+  color: #333; /* Text color */
+  margin: 20px auto; /* Center the form */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  font-family: 'Noto Sans KR', sans-serif; /* Apply the font */
+}
+
+.author-boardid-row {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .author-boardid-row {
+    flex-direction: column;
+  }
+}
+
+.write-button {
+  margin-top: 20px;
+  width: 100%;
+}

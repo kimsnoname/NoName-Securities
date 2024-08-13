@@ -1,0 +1,93 @@
+/* 전체 컨테이너 스타일 */
+.stock-info {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* 제목 스타일 */
+.stock-info h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.stock-info h2 {
+  font-size: 20px;
+  margin-top: 20px;
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+/* 리스트 스타일 */
+.stock-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.stock-info li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* 링크 스타일 */
+.stock-info a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.stock-info a:hover {
+  text-decoration: underline;
+}
+
+/* 에러 및 로딩 스타일 */
+.error, .loading {
+  text-align: center;
+  font-size: 18px;
+  color: #d9534f;
+  margin-top: 50px;
+}
+
+/* 정보 섹션 스타일 */
+.info-section {
+  margin-bottom: 20px;
+}
+
+.info-section h2 {
+  margin-bottom: 10px;
+}
+
+.info-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.info-section ul li {
+  margin-bottom: 5px;
+}
+
+/* IR 일정 스타일 */
+.ir-schedule {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+.ir-schedule h2 {
+  margin-bottom: 10px;
+}
+
+/* 회사 로고 스타일 */
+.company-logo {
+  width: 50px;
+  height: auto;
+  margin-left: 10px;
+  vertical-align: middle;
+}
